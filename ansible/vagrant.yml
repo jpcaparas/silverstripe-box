@@ -1,0 +1,14 @@
+---
+- include: provision.yml
+
+- hosts: all
+  tasks:
+    - name: switch to /vagrant after login
+      lineinfile:
+         dest=/home/vagrant/.bashrc
+         line="cd /vagrant"
+         regexp="^cd \/vagrant"
+         owner=vagrant
+         state=present
+         insertafter=EOF
+         create=True

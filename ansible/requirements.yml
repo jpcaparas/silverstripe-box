@@ -1,9 +1,15 @@
 ---
+- src: geerlingguy.repo-dotdeb
+  version: "1.0.2"
+
 - src: geerlingguy.mysql
   version: "2.7.2"
 
 - src: geerlingguy.php
   version: "3.4.5"
+
+- src: geerlingguy.composer
+  version: "1.6.1"
 
 - src: geerlingguy.nginx
   version: "2.3.2"

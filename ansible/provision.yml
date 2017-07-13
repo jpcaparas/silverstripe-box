@@ -1,0 +1,25 @@
+---
+- hosts: all
+  tasks:
+    - name: include role vars
+      include_vars:
+        dir: 'vars/roles'
+        extensions: ['yml']
+
+- hosts: all
+  become: true
+  roles:
+    - geerlingguy.repo-dotdeb
+
+- hosts: web
+  become: true
+  roles:
+    - geerlingguy.php
+    - geerlingguy.composer
+    - geerlingguy.nginx
+    - geerlingguy.nodejs
+
+- hosts: db
+  become: true
+  roles:
+    - geerlingguy.mysql

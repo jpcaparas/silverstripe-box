@@ -1,0 +1,22 @@
+---
+php_packages:
+  - php7.0-common
+  - php7.0-cli
+  - php7.0-dev
+  - php7.0-fpm
+  - libpcre3-dev
+  - php7.0-gd
+  - php7.0-curl
+  - php7.0-imap
+  - php7.0-json
+  - php7.0-opcache
+  - php7.0-xml
+  - php7.0-mbstring
+  - php7.0-zip
+  - php-sqlite3
+  - php-pgsql
+php_enable_webserver: "true"
+php_webserver_daemon: "nginx"
+php_enable_php_fpm: true
+php_opcache_conf_filename: 10-opcache.ini
+php_enable_apc: false

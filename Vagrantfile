@@ -40,4 +40,13 @@ Vagrant.configure(2) do |config|
     vb.name = options[:project]
     vb.memory = options[:memory]
   end
+
+  config.vm.provision :ansible do |ansible|
+    ansible.inventory_path = 'ansible/env/vagrant/inventory'
+    ansible.playbook = 'ansible/vagrant.yml'
+    ansible.config_file = 'ansible/ansible.cfg'
+    ansible.host_key_checking = false
+    ansible.verbose = options[:debug] ? 'vvv' : false
+    ansible.limit = 'all'
+  end
 end
