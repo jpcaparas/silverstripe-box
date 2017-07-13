@@ -9,11 +9,20 @@ options = {
   :debug => false
 }
 
+system("
+    if [ #{ARGV[0]} = 'up' ]; then
+        sh setup.sh
+    fi
+")
+
 Vagrant.configure(2) do |config|
   config.vm.box = "debian/jessie64"
 
   config.vm.network "private_network", ip: "10.10.10.10"
+
+  config.ssh.username = "vagrant"
   config.ssh.forward_agent = true
+  config.ssh.keep_alive = true
 
   config.vm.synced_folder "./", "/vagrant", type: "nfs", mount_options: ['rw', 'vers=3', 'tcp']
 

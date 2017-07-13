@@ -1,0 +1,6 @@
+---
+- src: geerlingguy.mysql
+  version: "2.7.2"
+
+- src: geerlingguy.php
+  version: "3.4.5"
