@@ -11,6 +11,8 @@ install_ansible_galaxy_roles()
   fi
 
   ansible-galaxy install -r "$ANSIBLE_PATH/requirements.yml" -p "$ANSIBLE_PATH/vendor"
+
+  exit
 }
 
 install_ansible_galaxy_roles
